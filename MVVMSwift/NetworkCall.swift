@@ -10,9 +10,9 @@ import UIKit
 
 class NetworkCall: NSObject {
 
-    func getDataFromServer(completionHandler: @escaping ([NSDictionary]?) -> Void) {
+    func getDataFromServer(url:String, completionHandler: @escaping ([NSDictionary]?) -> Void) {
         
-        guard let url = URL(string: "https://dl.dropboxusercontent.com/s/jnxbs21h3bkm3qe/tableData.json?dl=0") else {
+        guard let url = URL(string: url) else {
             print("Error");
             return
         }

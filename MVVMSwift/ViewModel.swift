@@ -5,10 +5,9 @@
 //  Created by user on 22/03/18.
 //  Copyright © 2018 pankajBhardwaj. All rights reserved.
 //
+import Foundation
 
-import UIKit
-
-class ViewModel: NSObject {
+class ViewModel {
 
     var networkCall = NetworkCall()
 
@@ -16,7 +15,7 @@ class ViewModel: NSObject {
     
     func getList(completionHandler: @escaping () -> Void) {
         
-        networkCall.getDataFromServer { (responseData) in
+        networkCall.getDataFromServer(url: "https://dl.dropboxusercontent.com/s/jnxbs21h3bkm3qe/tableData.json?dl=0") { (responseData) in
             
             DispatchQueue.main.async {
                 self.responseArray = responseData
